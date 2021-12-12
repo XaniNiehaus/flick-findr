@@ -1,3 +1,7 @@
+A lightweight movie search engine, built with React and React-Bootstrap
+
+Demo Link here: https://flick-findr-gr778d6ct-xaniniehaus.vercel.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
