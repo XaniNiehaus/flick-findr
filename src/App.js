@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CustomNavbar from "./components/CustomNavbar";
+import {useStoreState} from "easy-peasy";
+import MovieList from "./components/MovieList";
+import MovieCardsContainer from "./components/MovieCardsContainer";
+import MoreInfoDrawer from "./components/MoreInfoDrawer";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const viewMode = useStoreState((state) => state.viewMode);
+
+    return (
+        <div>
+            <CustomNavbar/>
+            <MoreInfoDrawer/>
+            {(viewMode === "list") && <MovieList/>}
+            {viewMode === "card" && <MovieCardsContainer/>}
+        </div>
+    );
 }
 
 export default App;
